@@ -118,6 +118,5 @@ Feedstock Maintainers
 
 * [@artur-trzesiok](https://github.com/artur-trzesiok/)
 * [@marcinofulus](https://github.com/marcinofulus/)
-* [@renefritze](https://github.com/renefritze/)
 * [@tgandor](https://github.com/tgandor/)
 
