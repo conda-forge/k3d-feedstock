@@ -5,7 +5,7 @@ Home: http://github.com/K3D-tools/K3D-jupyter
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Jupyter notebook extension for 3D visualization.
 
