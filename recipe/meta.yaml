@@ -18,10 +18,10 @@ requirements:
   build:
     - setuptools
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - ipywidgets >=7.0.1
     - ipydatawidgets
     - traittypes
