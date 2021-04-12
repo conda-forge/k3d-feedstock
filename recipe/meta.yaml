@@ -1,5 +1,5 @@
 {% set name = "k3d" %}
-{% set version = "2.6.10" %}
+{% set version = "2.9.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|upper }}-{{ version }}.tar.gz
-  sha256: 70528a459dd92fb6e4d32b67f187c0771f735a0c3460148ca061d208673485e5
+  sha256: c1263f290b1d74da2ddc8fe7a74a810b42c5e3d80b703916a46cd44b1190093c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -39,12 +39,11 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Jupyter notebook extension for 3D visualization.'
+  summary: Jupyter notebook extension for 3D visualization.
   dev_url: https://github.com/K3D-tools/K3D-jupyter
 
 extra:
   recipe-maintainers:
-    - renefritze
     - tgandor
     - artur-trzesiok
     - marcinofulus
