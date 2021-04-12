@@ -5,10 +5,6 @@
 # changes to this script, consider a proposal to conda-smithy so that other feedstocks can also
 # benefit from the improvement.
 
-source .scripts/logging_utils.sh
-
-( startgroup "Configure Docker" ) 2> /dev/null
-
 set -xeo pipefail
 
 THISDIR="$( cd "$( dirname "$0" )" >/dev/null && pwd )"
@@ -70,10 +66,6 @@ if [ -z "${CI}" ]; then
     DOCKER_RUN_ARGS="-it ${DOCKER_RUN_ARGS}"
 fi
 
-( endgroup "Configure Docker" ) 2> /dev/null
-
-( startgroup "Start Docker" ) 2> /dev/null
-
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run ${DOCKER_RUN_ARGS} \
            -v "${RECIPE_ROOT}":/home/conda/recipe_root:rw,z,delegated \
@@ -97,6 +89,3 @@ docker run ${DOCKER_RUN_ARGS} \
 
 # verify that the end of the script was reached
 test -f "$DONE_CANARY"
-
-# This closes the last group opened in `build_steps.sh`
-( endgroup "Final checks" ) 2> /dev/null
