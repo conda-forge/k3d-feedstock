@@ -17,13 +17,13 @@ build:
 requirements:
   build:
     - setuptools
+    - jupyter-packaging
   host:
     - python >=3.6
     - pip
   run:
     - python >=3.6
-    - ipywidgets >=7.0.1
-    - jupyter-packaging
+    - ipywidgets >=7.0.1    
     - traittypes
     - traitlets
     - numpy >=1.11.0
