@@ -26,10 +26,11 @@ requirements:
     - ipydatawidgets
     - traittypes
     - traitlets
+    - pytest
     - numpy >=1.11.0
 test:
   commands:
-    - cd {{ SRC_DIR }}/js && npm install && xvfb-run -a grunt test  # [linux]
+    - cd {{ SRC_DIR }}/k3d && xvfb-run -a pytest  # [linux]
   requires:
     - grunt
     - nodejs
