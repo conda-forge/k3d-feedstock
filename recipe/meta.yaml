@@ -23,17 +23,15 @@ requirements:
   run:
     - python >=3.6
     - ipywidgets >=7.0.1
-    - ipydatawidgets
+    - jupyter_packaging
     - traittypes
     - traitlets
-    - pytest
     - numpy >=1.11.0
 test:
   commands:
     - cd {{ SRC_DIR }}/k3d && xvfb-run -a pytest  # [linux]
   requires:
-    - grunt
-    - nodejs
+    - pytest
 
 about:
   home: http://github.com/K3D-tools/K3D-jupyter
