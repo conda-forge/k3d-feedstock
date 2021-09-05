@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=3.6
     - ipywidgets >=7.0.1
-    - jupyter_packaging
+    - jupyter-packaging
     - traittypes
     - traitlets
     - numpy >=1.11.0
