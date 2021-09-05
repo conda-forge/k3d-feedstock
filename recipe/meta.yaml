@@ -15,12 +15,12 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
-    - setuptools
-    - jupyter-packaging
   host:
     - python >=3.6
     - pip
+    - setuptools
+    - jupyter-packaging
+    - jupyterlab
   run:
     - python >=3.6
     - ipywidgets >=7.0.1    
@@ -28,10 +28,16 @@ requirements:
     - traitlets
     - numpy >=1.11.0
 test:
-  commands:
-    - cd {{ SRC_DIR }}/k3d && xvfb-run -a pytest  # [linux]
+  imports:
+    - k3d
   requires:
-    - pytest
+    - pip
+    - jupyterlab
+  commands:
+    - pip check
+    - jupyter labextension list
+    - jupyter labextension list 1>labextensions 2>&1
+    - cat labextensions | grep "k3d.*OK"  # [unix]
 
 about:
   home: http://github.com/K3D-tools/K3D-jupyter
