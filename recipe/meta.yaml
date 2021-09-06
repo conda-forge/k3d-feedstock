@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -27,6 +27,7 @@ requirements:
     - traittypes
     - traitlets
     - numpy >=1.11.0
+    - msgpack
 test:
   imports:
     - k3d
