@@ -27,7 +27,7 @@ requirements:
     - traittypes
     - traitlets
     - numpy >=1.11.0
-    - msgpack-python
+    - msgpack
 test:
   imports:
     - k3d
