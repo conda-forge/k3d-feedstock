@@ -18,9 +18,9 @@ requirements:
   host:
     - python >=3.6
     - pip
-    - setuptools
-    - jupyter-packaging
-    - jupyterlab
+    - setuptools >=40.8.0
+    - jupyter-packaging ~=0.7.9
+    - jupyterlab ~=3.0
   run:
     - python >=3.6
     - ipywidgets >=7.0.1
@@ -33,7 +33,7 @@ test:
     - k3d
   requires:
     - pip
-    - jupyterlab
+    - jupyterlab ~=3.0
   commands:
     - pip check
     - jupyter labextension list
