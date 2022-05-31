@@ -1,5 +1,5 @@
 {% set name = "k3d" %}
-{% set version = "2.14.1" %}
+{% set version = "2.14.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5452d9110e1b43b30580804064a32593dde111b8f94c69d9332ed5a515ef1129
+  sha256: 7e209f658203abc49df5034cee1e9d9fe3469daaa68df72504cce0143ad0f433
 
 build:
   noarch: python
