@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
-    - setuptools >=40.8.0
-    - jupyter-packaging ~=0.7.9
     - jupyterlab ~=3.0
+    - hatchling >=1.10.0
+    - hatch-nodejs-version >=0.3.0
   run:
-    - python >=3.6
+    - python >=3.7
     - ipywidgets >=7.0.1
     - traittypes
     - traitlets
