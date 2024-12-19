@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d4c6314c90fae1362869909d28c04a86e805b35d320ec78d44255090c568c609
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - jupyterlab ~=3.0
     - hatchling >=1.10.0
     - hatch-nodejs-version >=0.3.0
     - hatch-jupyter-builder >=0.6.2
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - ipywidgets >=7.0.1
     - traittypes
     - traitlets
@@ -35,6 +35,7 @@ test:
   requires:
     - pip
     - jupyterlab ~=3.0
+    - python {{ python_min }}
   commands:
     - pip check
     - jupyter labextension list
