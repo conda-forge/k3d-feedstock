@@ -29,7 +29,6 @@ requirements:
     - traitlets
     - numpy >=1.11.0
     - msgpack-python
-    - deepcomparer
 test:
   imports:
     - k3d
@@ -37,8 +36,8 @@ test:
     - pip
     - jupyterlab ~=3.0
     - python {{ python_min }}
-    - deepcomparer
   commands:
+    - pip deepcomparer
     - pip check
     - jupyter labextension list
     - jupyter labextension list 1>labextensions 2>&1
