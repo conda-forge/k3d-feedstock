@@ -1,5 +1,5 @@
 {% set name = "k3d" %}
-{% set version = "2.16.1" %}
+{% set version = "2.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d4c6314c90fae1362869909d28c04a86e805b35d320ec78d44255090c568c609
+  sha256: 7dd41fe72a51065d302f04761502f965378693f12bf3a831152b61ce00050c4c
 
 build:
   noarch: python
@@ -37,6 +37,7 @@ test:
     - jupyterlab ~=3.0
     - python {{ python_min }}
   commands:
+    - pip install deepcomparer
     - pip check
     - jupyter labextension list
     - jupyter labextension list 1>labextensions 2>&1
