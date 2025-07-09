@@ -37,7 +37,7 @@ test:
     - jupyterlab ~=3.0
     - python {{ python_min }}
   commands:
-    - pip deepcomparer
+    - pip install deepcomparer
     - pip check
     - jupyter labextension list
     - jupyter labextension list 1>labextensions 2>&1
