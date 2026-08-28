@@ -18,13 +18,13 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - jupyterlab ~=3.0
     - hatchling >=1.10.0
     - hatch-nodejs-version >=0.3.0
     - hatch-jupyter-builder >=0.6.2
   run:
     - python >={{ python_min }}
-    - ipywidgets >=7.0.1
+    - anywidget >=0.9.13
+    - ipywidgets >=7.6.0,<9.0.0
     - traittypes
     - traitlets
     - numpy >=1.11.0
@@ -34,14 +34,15 @@ test:
     - k3d
   requires:
     - pip
-    - jupyterlab ~=3.0
     - python {{ python_min }}
   commands:
+    # deepcomparer is a hard requirement of upstream metadata but is only used by
+    # the optional k3d.headless module and has no conda-forge package
     - pip install deepcomparer
     - pip check
-    - jupyter labextension list
-    - jupyter labextension list 1>labextensions 2>&1
-    - cat labextensions | grep "k3d.*OK"  # [unix]
+    # the anywidget front-end module replaced the labextension in 3.0.0; without it
+    # the widget imports fine but renders nothing
+    - python -c "import k3d, pathlib; assert (pathlib.Path(k3d.__file__).parent / 'static' / 'widget.mjs').is_file()"
 
 about:
   home: http://github.com/K3D-tools/K3D-jupyter
