@@ -11,14 +11,16 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-    - hatchling >=1.10.0
+    # 1.27 for PEP 639: from 3.0.2 upstream declares `license`/`license-files`, which
+    # older hatchling rejects. The autotick bot bumps version and sha but not host pins.
+    - hatchling >=1.27.0
     - hatch-nodejs-version >=0.3.0
     - hatch-jupyter-builder >=0.6.2
   run:
@@ -45,11 +47,20 @@ test:
     - python -c "import k3d, pathlib; assert (pathlib.Path(k3d.__file__).parent / 'static' / 'widget.mjs').is_file()"
 
 about:
-  home: http://github.com/K3D-tools/K3D-jupyter
+  home: https://k3d-jupyter.org
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: Jupyter notebook extension for 3D visualization.
+  summary: 'WebGL 3D plotting for Jupyter: meshes, isosurfaces, volumes, voxels and point clouds'
+  description: |
+    K3D renders meshes, isosurfaces, volumes, voxels, point clouds, lines and VTK objects
+    from plain NumPy arrays, and carries a path-traced cinematic renderer for
+    publication-quality stills.
+
+    Since 3.0.0 the front end is an anywidget, so there is no extension to install or
+    enable: the same package works in JupyterLab, Jupyter Notebook, Google Colab and
+    VS Code.
+  doc_url: https://k3d-jupyter.org
   dev_url: https://github.com/K3D-tools/K3D-jupyter
 
 extra:
