@@ -3,13 +3,24 @@ About k3d-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/k3d-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/K3D-tools/K3D-jupyter
+Home: https://k3d-jupyter.org
 
 Package license: MIT
 
-Summary: Jupyter notebook extension for 3D visualization.
+Summary: WebGL 3D plotting for Jupyter: meshes, isosurfaces, volumes, voxels and point clouds
 
 Development: https://github.com/K3D-tools/K3D-jupyter
+
+Documentation: https://k3d-jupyter.org
+
+K3D renders meshes, isosurfaces, volumes, voxels, point clouds, lines and VTK objects
+from plain NumPy arrays, and carries a path-traced cinematic renderer for
+publication-quality stills.
+
+Since 3.0.0 the front end is an anywidget, so there is no extension to install or
+enable: the same package works in JupyterLab, Jupyter Notebook, Google Colab and
+VS Code.
+
 
 Current build status
 ====================
