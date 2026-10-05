@@ -1,5 +1,5 @@
 {% set name = "k3d" %}
-{% set version = "3.1.2" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7f6b3cb1ca7218fb9066f40c0aa62059d67ef1865f26f5f1de3350d855dde7e5
+  sha256: c4a3614d9c3df89f7276ce499a8a6174214d3e5b5b3f9d5b0374fce4f9beffb5
 
 build:
   noarch: python
